@@ -758,6 +758,7 @@ a:visited {
   right: 24px;
   width: 24px;
   height: 24px;
+  padding: 0;
   background-color: #e7e9fc;
   border: 1px solid #0000001a;
   border-radius: 50%;
@@ -822,10 +823,11 @@ a:visited {
   font-family: Roboto;
   font-weight: 400;
   font-size: 12px;
-  line-height: 14px;
-  letter-spacing: 4%;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
   color: #8e8f99;
   margin-bottom: 4px;
+  display: block;
 }
 
 .modal-input-wrapper {
@@ -839,9 +841,9 @@ a:visited {
   border: 1px solid #2e2f4266;
   border-radius: 4px;
   background-color: transparent;
-  outline: 0;
-  padding-left: 36px;
-  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  outline: transparent;
+  padding-left: 38px;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-input:focus {
@@ -858,9 +860,13 @@ a:visited {
   fill: #2e2f42;
   position: absolute;
   top: 50%;
-  left: 24px;
+  left: 16px;
   transform: translate(-50%, -50%);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-comment-input {
+  margin-bottom: 16px;
 }
 
 .modal-textarea {
@@ -869,15 +875,16 @@ a:visited {
   border: 1px solid #2e2f4266;
   border-radius: 4px;
   background-color: transparent;
-  outline: 0;
-  padding: 8px 16px 16px 16px;
-  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  outline: transparent;
+  padding: 8px 16px;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   resize: none;
   font-family: Roboto;
   font-weight: 400;
   font-size: 12px;
-  line-height: 14px;
-  letter-spacing: 4%;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: rgba(46, 47, 66, 0.4);
 }
 
 .modal-textarea:focus {
@@ -894,7 +901,6 @@ a:visited {
   justify-content: start;
   align-items: center;
   flex-direction: row;
-  margin-top: 16px;
 }
 
 .modal-checkbox-label {
@@ -940,7 +946,7 @@ a:visited {
 
 .modal-checkbox-input:checked + .modal-checkbox-label .modal-checkbox {
   background-color: #404bbf;
-  border: 0;
+  border: none;
 }
 
 .modal-checkbox-input:checked
@@ -950,9 +956,16 @@ a:visited {
   fill: #f4f4fd;
 }
 
+.modal-checkbox-label {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+}
+
 .modal-button {
   margin-top: 24px;
-  width: 169px;
+  min-width: 169px;
   padding: 16px 32px;
   background-color: #4d5ae5;
   box-shadow: 0px 4px 4px 0px #00000026;
@@ -961,10 +974,11 @@ a:visited {
   font-family: Roboto;
   font-weight: 500;
   font-size: 16px;
-  line-height: 24px;
-  letter-spacing: 4%;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
   text-align: center;
   color: white;
+  cursor: pointer;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
