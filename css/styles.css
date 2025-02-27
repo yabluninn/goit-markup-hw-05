@@ -724,7 +724,8 @@ a:visited {
 
   opacity: 0;
   pointer-events: none;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-overlay.is-open {
@@ -734,13 +735,12 @@ a:visited {
 
 .modal {
   width: 408px;
-  height: 584px;
+  min-height: 584px;
   border-radius: 4px;
   background-color: #fcfcfc;
   padding: 72px 24px 24px 24px;
-  box-shadow: 0px 1px 1px 0px #00000024;
-  box-shadow: 0px 1px 3px 0px #0000001f;
-  box-shadow: 0px 2px 1px 0px #00000033;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: start;
   align-items: center;
@@ -749,6 +749,7 @@ a:visited {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-close-button {
@@ -763,14 +764,18 @@ a:visited {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-close-button:hover {
+.modal-close-button:hover,
+.modal-close-button:focus {
   background-color: #404bbf;
+  border: none;
 }
 
-.modal-close-button:hover .modal-close-icon {
+.modal-close-button:hover,
+.modal-close-button:focus .modal-close-icon {
   fill: #ffffff;
 }
 
@@ -778,13 +783,7 @@ a:visited {
   width: 8px;
   height: 8px;
   fill: #2e2f42;
-}
-
-.modal-header-block {
-  width: 100%;
-  display: flex;
-  justify-content: end;
-  align-items: center;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-title {
@@ -794,6 +793,8 @@ a:visited {
   line-height: 1.5;
   letter-spacing: 0.02em;
   text-align: center;
+  color: #2e2f42;
+  margin-bottom: 16px;
 }
 
 .modal-inputs {
@@ -802,7 +803,6 @@ a:visited {
   justify-content: start;
   align-items: center;
   flex-direction: column;
-  margin-top: 16px;
 }
 
 .modal-input-container {
@@ -927,6 +927,9 @@ a:visited {
   justify-content: center;
   align-items: center;
   background-color: transparent;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-checked-svg {
